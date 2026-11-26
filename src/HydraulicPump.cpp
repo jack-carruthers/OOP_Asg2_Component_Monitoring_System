@@ -32,9 +32,9 @@ void HydraulicPump::setFluidLevel(double fluidLevel) {
 // Returns the worst status of the hydraulic pump based on pressure and fluid level
 Status HydraulicPump::conditionStatus() const {
     Status p = Status::Normal;
-    if      (pressure_ < 2000.0 || pressure_ >= 4000.0) p = Status::NonOperational;
-    else if (pressure_ < 2500.0 || pressure_ >= 3500.0) p = Status::MaintenanceRequired;
-    else if (pressure_ < 2800.0 || pressure_ >= 3200.0) p = Status::Caution;
+    if      (pressure_ < 2000.0 || pressure_ > 4000.0) p = Status::NonOperational;
+    else if (pressure_ < 2500.0 || pressure_ > 3500.0) p = Status::MaintenanceRequired;
+    else if (pressure_ < 2800.0 || pressure_ > 3200.0) p = Status::Caution;
 
     Status f = Status::Normal;
     if      (fluidLevel_ < 20.0)    f = Status::NonOperational;

@@ -37,7 +37,7 @@ Status EngineComponent::conditionStatus() const {
     else if (temperature_ > 800.0) t = Status::Caution;
 
     Status v = Status::Normal;
-    if (vibration_ > 11.0)         v = Status::NonOperational;
+    if      (vibration_ > 11.0)   v = Status::NonOperational;
     else if (vibration_ > 7.1)    v = Status::MaintenanceRequired;
     else if (vibration_ > 4.5)    v = Status::Caution;
 
