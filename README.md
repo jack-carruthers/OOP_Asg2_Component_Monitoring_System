@@ -16,17 +16,28 @@ A console application that can monitor aircraft components and report its status
 
 C++17 complier (I used g++ from MinGW-w64/WinLibs).
 
+## Run the prebuilt programs (Windows)
+Open a terminal in the project folder and run:
+
+```
+./bin/acms.exe
+./bin/run_tests.exe
+```
+
+`acms.exe` is the application. `run_tests.exe` runs the automated tests and ends with
+a line such as `Passed 78 of 78`. These programs only run on Windows. On other systems, build from source below.
+
+
 ## Build and run application 
 
 From the project folder open a terminal and run:
 
   g++ -std=c++17 -Wall -Wextra -o acms src/Component.cpp src/EngineComponent.cpp src/HydraulicPump.cpp src/ComponentMonitor.cpp src/main.cpp
+  
   ./acms.exe
 
 ## Build and run automated tests 
 
   g++ -std=c++17 -Wall -Wextra -o run_tests tests/tests.cpp src/Component.cpp src/EngineComponent.cpp src/HydraulicPump.cpp src/ComponentMonitor.cpp
+  
   ./run_tests.exe
-
-# Do note that for both the tests and application the exe will be left in repo so only the second line should needed be to typed into terminal to run it, for example just type ./acms.exe in terminal open to project folder to run application
-
