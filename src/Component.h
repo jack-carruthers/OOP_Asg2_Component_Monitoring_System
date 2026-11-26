@@ -5,14 +5,16 @@
 // Base class for all components in the system
 class Component {
 public:
+    // Constructor validates the inputs  
     Component(std::string id, std::string name, double hoursSinceService, double serviceIntervalHours);
     virtual ~Component() = default;
 
+    // Access methods 
     const std::string& id() const { return id_; }
     const std::string& name() const { return name_; }
     double hoursSinceService() const { return hoursSinceService_; }
     double serviceIntervalHours() const { return serviceIntervalHours_; }
-    void setHoursSinceService(double hours) { hoursSinceService_ = hours; }
+    void setHoursSinceService(double hours);
     
     Status status() const; 
 
@@ -22,6 +24,7 @@ public:
 protected: 
     virtual Status conditionStatus() const = 0;
     static void requiredRange(double value, double min, double max, const char* name);
+
 
 private:
     Status serviceStatus() const;

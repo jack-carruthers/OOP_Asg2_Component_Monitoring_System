@@ -19,10 +19,9 @@ inline std::string toString(Status status) {
         case Status::MaintenanceRequired:
             return "Maintenance Required";
         case Status::NonOperational:
-            return "Non Operational (Do not repair or reuse)";
-        default:
-            return "Unknown Status";
-    }
+            return "Non Operational";
+     }
+     return "Unknown Status";
 }
 
 // Checks two statuses and outputs the one with more severity 
